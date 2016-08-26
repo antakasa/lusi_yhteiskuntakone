@@ -1,18 +1,46 @@
-{% from 'macros/helpers.html' import sprite %}
 <!doctype html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <title>{% block title %}{{ title }}{% endblock %}</title>
+    <title>New Project</title>
     <link rel="stylesheet" href="stylesheets/app.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% include "shared/app-icons.html" %}
-    {% block head %}{% endblock %}
-  </head>
-  <body>
-    {% block content %}{% endblock %}
-    {% block javascript %}
-      <script src="javascripts/app.js"></script>
-    {% endblock %}
-  </body>
+    <!-- Generate using http://realfavicongenerator.net/ -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="javascripts/app.js"></script>
+</head>
+
+<body>
+    <div data-role="page" id="page1">
+        <div data-role="header"> <a href="#page2">Page 2</a>
+            <h1>Page 1</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <form id="rangeSliderForm">
+                <legend>Ikä:</legend>
+                <input type="range" name="slider" id="slider" value="0" min="0" max="100" />
+                <fieldset data-role="controlgroup" data-type="horizontal">
+                    <legend>Sukupuoli:</legend>
+                    <input type="radio" name="radio-choice-h-2" id="mies" class="sukupuoli" value="on" checked="checked">
+                    <label for="mies">Mies</label>
+                    <input type="radio" name="radio-choice-h-2" id="nainen" class="sukupuoli" value="off">
+                    <label for="nainen">Nainen</label>
+                </fieldset>
+            </form>
+            <div id="dynamicContent">
+            <p><b><span id="dynSukupuoli"></span></b> keskimääräinen eliniänodote oli syntymävuonnasi <span id="dynSynVuosi"></span>  <span class="dynamic" id="dynElinika"></span> vuotta. <span id="dynVanhempi"></span> syntymän aikaan voidaan arvioida sen olleen <span class="dynamic" id="dynVanhempiElinika"></span> vuotta (<span id="dynVanSynVuosi"></span>). Vuonna 2015 syntyneiden <span id="dynLapsi"></span> arvioidaan elävän keskimäärin <span class="dynamic"  id="dynLapsiElinika"></span>-vuotiaiksi.</p>
+            </div>
+        </div>
+    </div>
+    <div data-role="page" id="page2">
+        <div data-role="header"> <a href="#page1">Page 1</a>
+            <h1>Page 2</h1>
+        </div>
+        <div role="main" class="ui-content"></div>
+    </div>
+</body>
+
 </html>
