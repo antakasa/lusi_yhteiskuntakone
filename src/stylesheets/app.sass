@@ -5,3 +5,120 @@
 #dynamicContent
 	.dynamic
 		color: #059
+
+
+.timeline
+  width: 100%
+  height: auto
+  margin: 0 0 10px 0
+  position: relative
+  padding: 100px 0 0 0
+
+
+  .start
+    font-size: 32px
+    position: absolute
+    top: -45px
+    left: -35px
+
+  .end
+    font-size: 32px
+    position: absolute
+    bottom: -45px
+    left: -35px
+
+  .event
+
+    width: 38%
+    height: 250px
+    text-align: center
+    box-shadow: 0 0.01em 0.01em #000
+    margin: 0 auto 0 auto
+    padding: 25px
+    background: #38c
+    color: #FFF
+    z-index: 2
+    float: none
+    box-sizing: border-box
+    position: relative
+    text-shadow: none
+
+    .icon
+      position: absolute
+      left: 128px
+      top: -30px
+      height: 50px
+      width: 50px
+      background: #393939
+      border-radius: 50%
+      z-index: 3
+
+      img
+        max-width: 60%
+        height: auto
+        margin: 20%
+        -webkit-filter: invert(100%)
+        filter: invert(100%)
+
+    .date
+      font-weight: 700
+      font-size: 2rem
+      margin: 25px 0 0 0
+
+    .details
+      //font-weight: 400
+      font-size: 1rem
+      margin: 20px 0
+      padding: 0
+
+    &:nth-of-type(odd)
+      float: none
+      margin: 15% auto
+
+      .icon
+        left: 200px
+
+
+@media (max-width: 768px)
+  .timeline
+    .event
+      float: right
+      width: 60%
+      min-width: 300px
+      margin: 10% 10% 0 0
+
+      .icon
+        left: 120px
+
+      &:nth-of-type(odd)
+        margin: 10% 10% 0 0
+
+
+
+@media (max-width: 575px)
+  .timeline
+    padding: 100px 0 0 0
+    margin: 0 0 150px 0
+
+    .event
+      float: none
+      margin: 15% auto
+
+      &:nth-of-type(odd)
+        float: none
+        margin: 15% auto
+
+    .event
+      &:before, &:nth-of-type(odd):before, &:after, &:nth-of-type(odd):after
+        display: none
+
+      .icon, &:nth-of-type(odd) .icon
+        left: 128px
+
+      .date
+        margin: 25px 0 0 0
+
+/* TODO Add utility class to stylesheet
+
+.center
+  text-align: center
