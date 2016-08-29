@@ -1,11 +1,54 @@
 @import normalize
 @import base/mixins
 
+#rangeSliderForm
+  &.stickytop
+    position: fixed
+    z-index: 1000
+    background: white
+    top: 0
+    left: 0
+    width: 100%
+    margin: 0 auto 0 auto
+
+nav
+  &.main-nav.stickytop
+    position: fixed
+    background: white
+    top: 0
+    left: 15%
+    width: 70%
+    margin: 0 auto 0 auto
+
+@media all and (min-width: 360px) and (max-width: 480px)
+  header
+    padding: 5px 0 55px
+  nav.main-nav
+    a
+      font-size: 17px
+    height: 55px
+  .container
+    margin: 0 auto
+    width: 100%
+
+@media screen and (max-width: 480px)
+  header
+    padding: 5px 0 55px
+  nav.main-nav
+    a
+      font-size: 17px
+    height: 55px
+
+.ui-content
+  width: 60%
+  margin: 0 auto 0 auto
+
+
 
 #dynamicContent
 	.dynamic
-		color: #059
-
+		color: #FFFF00
+    font-weight: 400
 
 .timeline
   width: 100%
@@ -45,7 +88,7 @@
 
     .icon
       position: absolute
-      left: 128px
+      left: 220px
       top: -30px
       height: 50px
       width: 50px
@@ -95,14 +138,17 @@
 
 
 
+
 @media (max-width: 575px)
+  
   .timeline
-    padding: 100px 0 0 0
+    padding: 10px 0 0 0
     margin: 0 0 150px 0
 
     .event
       float: none
       margin: 15% auto
+      height: 300px
 
       &:nth-of-type(odd)
         float: none
